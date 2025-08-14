@@ -17,10 +17,16 @@ const weldingImages = [
 
 const courses = [
   { 
-    title: "Welding", 
+    title: "Arc Welding", 
     icon: Flame, 
-    description: "Shielded metal arc, MIG/TIG and safety-first welding training.",
-    image: "/lovable-uploads/fd40b42b-097e-49c9-bed4-43f61736fa13.png"
+    description: "Shielded Metal Arc Welding (SMAW) with professional electrode techniques and safety protocols.",
+    image: "/lovable-uploads/e1c80d03-80ec-4c26-842d-e1f05b32cc81.png"
+  },
+  { 
+    title: "MIG Welding", 
+    icon: Zap, 
+    description: "Metal Inert Gas welding for precise fabrication and industrial applications.",
+    image: "/lovable-uploads/0d97587e-5da7-4342-b34b-53575dd7c043.png"
   },
   { 
     title: "Lathe Machine", 
