@@ -27,19 +27,26 @@ const Index = () => {
         path="/"
       />
       <header className="relative min-h-[100vh] overflow-hidden">
-        {/* Video Background */}
+        {/* YouTube Video Background */}
         <div className="absolute inset-0 -z-10">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover"
-          >
-            <source src="/videos/hero-background.mp4" type="video/mp4" />
-          </video>
+          <iframe
+            src="https://www.youtube.com/embed/rhpwYcxFa3c?autoplay=1&mute=1&loop=1&playlist=rhpwYcxFa3c&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&enablejsapi=1"
+            className="w-full h-full object-cover scale-150"
+            style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%) scale(1.2)',
+              minWidth: '100vw',
+              minHeight: '100vh',
+              pointerEvents: 'none'
+            }}
+            frameBorder="0"
+            allow="autoplay; encrypted-media"
+            title="Background Video"
+          />
           {/* Video overlay for better text readability */}
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-black/50" />
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/30 via-transparent to-blue-900/30" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20" />
         </div>
