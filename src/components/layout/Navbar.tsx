@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTrigger } from "@/components/ui/sheet";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const navItems = [
   { to: "/", label: "Home" },
@@ -18,14 +18,35 @@ const Navbar = () => {
   
   const handleNavClick = () => {
     setIsSheetOpen(false);
+    // Smooth scroll to top when navigating
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
+
+  const handleDesktopNavClick = () => {
+    // Smooth scroll to top when navigating on desktop
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  // Ensure smooth scrolling is enabled globally
+  useEffect(() => {
+    document.documentElement.style.scrollBehavior = 'smooth';
+    return () => {
+      document.documentElement.style.scrollBehavior = 'auto';
+    };
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b shadow-sm">
       {/* Top Bar with Logo */}
       <div className="bg-primary/5 border-b">
         <div className="container mx-auto py-4">
-          <Link to="/" className="flex items-center justify-center gap-3" aria-label="AIM Technical Institute home">
+          <Link to="/" onClick={handleDesktopNavClick} className="flex items-center justify-center gap-3" aria-label="AIM Technical Institute home">
             <img src="/lovable-uploads/0466aed5-0d14-4c2f-bac7-c512c4448f9b.png" alt="AIM Technical Institute logo" className="h-12 w-12 rounded-lg shadow-lg object-contain" loading="eager" />
             <div className="flex flex-col leading-tight text-center">
               <span className="text-xl font-bold tracking-tight text-primary">AIM Technical Institute</span>
@@ -44,6 +65,7 @@ const Navbar = () => {
               <NavLink
                 key={item.to}
                 to={item.to}
+                onClick={handleDesktopNavClick}
                 className={({ isActive }) =>
                   `text-sm font-medium transition-colors hover:text-primary px-3 py-2 rounded-md ${
                     isActive ? "text-primary bg-primary/10" : "text-muted-foreground hover:bg-accent"
