@@ -27,12 +27,22 @@ const Index = () => {
         path="/"
       />
       <header className="relative min-h-[100vh] overflow-hidden">
-        {/* Rotating Background Images */}
-        <BackgroundSlider 
-          images={backgroundImages}
-          duration={6000}
-          className="-z-10"
-        />
+        {/* Video Background */}
+        <div className="absolute inset-0 -z-10">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="/videos/hero-background.mp4" type="video/mp4" />
+          </video>
+          {/* Video overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/30 via-transparent to-blue-900/30" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20" />
+        </div>
         
         {/* Animated Overlay Elements */}
         <div className="absolute inset-0 -z-5">
