@@ -31,14 +31,16 @@ const Index = () => {
         <div className="absolute inset-0 -z-10">
           <iframe
             src="https://www.youtube.com/embed/rhpwYcxFa3c?autoplay=1&mute=1&loop=1&playlist=rhpwYcxFa3c&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&enablejsapi=1"
-            className="w-full h-full object-cover scale-150"
+            className="absolute inset-0 w-full h-full"
             style={{
+              width: '100vw',
+              height: '56.25vw', // 16:9 aspect ratio
+              minHeight: '100vh',
+              minWidth: '177.78vh', // 16:9 aspect ratio
               position: 'absolute',
               top: '50%',
               left: '50%',
-              transform: 'translate(-50%, -50%) scale(1.2)',
-              minWidth: '100vw',
-              minHeight: '100vh',
+              transform: 'translate(-50%, -50%)',
               pointerEvents: 'none'
             }}
             frameBorder="0"
