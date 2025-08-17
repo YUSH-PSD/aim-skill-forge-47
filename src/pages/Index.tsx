@@ -71,25 +71,34 @@ const Index = () => {
           }}></div>
         </div>
 
-        <section className="container mx-auto px-4 py-20 md:py-28 lg:py-32 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 animate-fade-in text-white">
-              <span className="bg-gradient-to-r from-yellow-300 via-orange-400 to-yellow-300 bg-clip-text text-transparent">
+        <section className="container mx-auto px-4 py-16 sm:py-20 md:py-28 lg:py-32 relative z-10">
+          <div className="max-w-5xl mx-auto text-center">
+            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-6 animate-fade-in text-white leading-tight">
+              <span className="bg-gradient-to-r from-yellow-300 via-orange-400 to-yellow-300 bg-clip-text text-transparent block">
                 Build job‑ready skills
               </span>
-              <br />
-              <span className="text-white">with practical training</span>
+              <span className="text-white block mt-2">with practical training</span>
             </h1>
             <div ref={heroRef}>
-              <p className={`mt-4 text-base sm:text-lg md:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed transition-all duration-700 ${isHeroIntersecting ? 'animate-pop-in opacity-100' : 'opacity-0 translate-y-5'}`}>
-                Welding, Carpentry, Electrical, Plumbing, Painting, Sand Blasting and more. Learn the skills employers value.
+              <p className={`mt-6 text-sm sm:text-base md:text-lg lg:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed transition-all duration-700 ${isHeroIntersecting ? 'animate-pop-in opacity-100' : 'opacity-0 translate-y-5'}`}>
+                Welding, Carpentry, Electrical, Plumbing, Painting, Sand Blasting and more. Learn the skills employers value most.
               </p>
             </div>
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in" style={{animationDelay: '0.4s', animationFillMode: 'both'}}>
-              <Button asChild variant="hero" size="lg" className="w-full sm:w-auto min-w-[200px] bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-0">
+            <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 animate-fade-in max-w-md sm:max-w-none mx-auto" style={{animationDelay: '0.4s', animationFillMode: 'both'}}>
+              <Button 
+                asChild 
+                variant="hero" 
+                size="lg" 
+                className="w-full sm:w-auto sm:min-w-[180px] lg:min-w-[200px] bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-0 text-sm sm:text-base font-semibold"
+              >
                 <Link to="/application">Apply Now</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="w-full sm:w-auto min-w-[200px] border-2 border-white/30 text-white hover:border-white/60 hover:bg-white/10 transition-all duration-300 hover:scale-105">
+              <Button 
+                asChild 
+                variant="outline" 
+                size="lg" 
+                className="w-full sm:w-auto sm:min-w-[180px] lg:min-w-[200px] border-2 border-white/30 text-white hover:border-white/60 hover:bg-white/10 transition-all duration-300 hover:scale-105 text-sm sm:text-base"
+              >
                 <Link to="/courses">Explore Courses</Link>
               </Button>
             </div>
@@ -97,8 +106,8 @@ const Index = () => {
         </section>
       </header>
 
-      <section ref={featuresRef} className="container mx-auto py-12 md:py-16">
-        <div className="grid md:grid-cols-3 gap-6">
+      <section ref={featuresRef} className="container mx-auto px-4 py-12 md:py-16 lg:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
           {[{
             title: "Hands‑on Training",
             desc: "Learn by doing with real equipment and guided practice.",
@@ -112,12 +121,16 @@ const Index = () => {
             desc: "Strong emphasis on safety protocols and standards.",
             Icon: ShieldCheck
           }].map(({title, desc, Icon}, index) => (
-            <article key={title} className="p-6 rounded-xl border bg-card hover:shadow-elevated transition-shadow">
-              <div className="h-11 w-11 rounded-md bg-gradient-primary shadow-elevated mb-4 grid place-items-center">
-                <Icon className="text-primary-foreground" />
+            <article 
+              key={title} 
+              className={`p-6 lg:p-8 rounded-xl border bg-card hover:shadow-elevated transition-all duration-300 hover:scale-105 ${isFeaturesIntersecting ? 'animate-pop-in opacity-100' : 'opacity-0 translate-y-5'}`}
+              style={{animationDelay: `${index * 0.2}s`}}
+            >
+              <div className="h-12 w-12 lg:h-14 lg:w-14 rounded-lg bg-gradient-primary shadow-elevated mb-4 lg:mb-6 grid place-items-center">
+                <Icon className="text-primary-foreground h-6 w-6 lg:h-7 lg:w-7" />
               </div>
-              <h2 className="text-xl font-semibold mb-1">{title}</h2>
-              <p className={`text-sm text-muted-foreground transition-all duration-700 ${isFeaturesIntersecting ? 'animate-pop-in opacity-100' : 'opacity-0 translate-y-5'}`} style={{animationDelay: `${index * 0.2}s`}}>
+              <h2 className="text-lg lg:text-xl font-semibold mb-2 lg:mb-3">{title}</h2>
+              <p className="text-sm lg:text-base text-muted-foreground leading-relaxed">
                 {desc}
               </p>
             </article>
@@ -135,7 +148,7 @@ const Index = () => {
             Get hands-on experience with industry-standard equipment and real-world projects.
           </p>
         </div>
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-8 lg:mb-12">
           {[{
             title: "Welding Technology",
             duration: "6 months",
@@ -155,35 +168,41 @@ const Index = () => {
             image: "/lovable-uploads/dc937378-28d0-467a-9880-c7998802295a.png",
             skills: ["Wood Working", "Furniture Making", "Tool Handling"]
           }].map((course, index) => (
-            <article key={course.title} className={`bg-card rounded-xl border shadow-soft hover:shadow-elevated transition-all duration-300 overflow-hidden group ${isCoursesIntersecting ? 'animate-pop-in opacity-100' : 'opacity-0 translate-y-5'}`} style={{animationDelay: `${index * 0.2}s`}}>
-              <div className="aspect-video overflow-hidden">
+            <article 
+              key={course.title} 
+              className={`bg-card rounded-xl border shadow-soft hover:shadow-elevated transition-all duration-300 overflow-hidden group hover:scale-105 ${isCoursesIntersecting ? 'animate-pop-in opacity-100' : 'opacity-0 translate-y-5'}`} 
+              style={{animationDelay: `${index * 0.2}s`}}
+            >
+              <div className="aspect-video overflow-hidden relative">
                 <img 
                   src={course.image} 
                   alt={course.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{course.title}</h3>
-                <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
-                  <span className="flex items-center gap-1">
-                    <Clock size={16} />
+              <div className="p-4 lg:p-6">
+                <h3 className="text-lg lg:text-xl font-semibold mb-3">{course.title}</h3>
+                <div className="flex flex-wrap items-center gap-3 lg:gap-4 text-xs lg:text-sm text-muted-foreground mb-4">
+                  <span className="flex items-center gap-1 bg-accent/50 px-2 py-1 rounded-full">
+                    <Clock size={14} />
                     {course.duration}
                   </span>
-                  <span className="flex items-center gap-1">
-                    <Users size={16} />
+                  <span className="flex items-center gap-1 bg-accent/50 px-2 py-1 rounded-full">
+                    <Users size={14} />
                     {course.students}
                   </span>
                 </div>
-                <div className="space-y-2 mb-4">
+                <div className="space-y-2 mb-6">
                   {course.skills.map(skill => (
-                    <div key={skill} className="flex items-center gap-2 text-sm">
-                      <CheckCircle size={16} className="text-primary" />
+                    <div key={skill} className="flex items-center gap-2 text-sm lg:text-base">
+                      <CheckCircle size={16} className="text-primary flex-shrink-0" />
                       <span>{skill}</span>
                     </div>
                   ))}
                 </div>
-                <Button asChild variant="outline" className="w-full">
+                <Button asChild variant="outline" className="w-full hover:bg-primary hover:text-primary-foreground transition-colors duration-200">
                   <Link to="/courses">Learn More</Link>
                 </Button>
               </div>
