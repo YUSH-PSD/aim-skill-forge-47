@@ -78,7 +78,7 @@ const ApplicationForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     if (!formData.fullName || !formData.agreementAccepted) {
@@ -90,13 +90,36 @@ const ApplicationForm = () => {
       return;
     }
 
-    setIsSubmitted(true);
-    toast({
-      title: "Application Submitted Successfully!",
-      description: "Thank you for applying to AIM Technical Institute. We will contact you soon.",
-    });
-    
-    console.log("Form submitted:", formData);
+    try {
+      // Submit to Supabase edge function
+      const response = await fetch(`https://hmkcyuwurxadufassayc.supabase.co/functions/v1/submit-application`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhta2N5dXd1cnhhZHVmYXNzYXljIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU0MjU2ODUsImV4cCI6MjA3MTAwMTY4NX0.xRyQUzLmKy9jEUSSN4mH-5jLaD3rypde8VxQWmHxSAs`
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSubmitted(true);
+        toast({
+          title: "Application Submitted Successfully!",
+          description: "Thank you for applying to AIM Technical Institute. We will contact you soon.",
+        });
+      } else {
+        throw new Error(result.error || 'Submission failed');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast({
+        title: "Submission Failed",
+        description: "There was an error submitting your application. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   if (isSubmitted) {
