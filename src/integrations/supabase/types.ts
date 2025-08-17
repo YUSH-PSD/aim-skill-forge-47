@@ -14,7 +14,78 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      form_submissions: {
+        Row: {
+          age: number | null
+          agreement_accepted: boolean
+          citizenship_no: string | null
+          contact_number: string | null
+          courses: string[] | null
+          created_at: string
+          date_of_birth: string | null
+          digital_signature: string | null
+          educational_qualification: string | null
+          email: string | null
+          full_name: string
+          gender: string | null
+          guardian_contact: string | null
+          guardian_name: string | null
+          id: string
+          nationality: string | null
+          permanent_address: string | null
+          recommended_by_contact: string | null
+          recommended_by_org: string | null
+          temporary_address: string | null
+          updated_at: string
+        }
+        Insert: {
+          age?: number | null
+          agreement_accepted?: boolean
+          citizenship_no?: string | null
+          contact_number?: string | null
+          courses?: string[] | null
+          created_at?: string
+          date_of_birth?: string | null
+          digital_signature?: string | null
+          educational_qualification?: string | null
+          email?: string | null
+          full_name: string
+          gender?: string | null
+          guardian_contact?: string | null
+          guardian_name?: string | null
+          id?: string
+          nationality?: string | null
+          permanent_address?: string | null
+          recommended_by_contact?: string | null
+          recommended_by_org?: string | null
+          temporary_address?: string | null
+          updated_at?: string
+        }
+        Update: {
+          age?: number | null
+          agreement_accepted?: boolean
+          citizenship_no?: string | null
+          contact_number?: string | null
+          courses?: string[] | null
+          created_at?: string
+          date_of_birth?: string | null
+          digital_signature?: string | null
+          educational_qualification?: string | null
+          email?: string | null
+          full_name?: string
+          gender?: string | null
+          guardian_contact?: string | null
+          guardian_name?: string | null
+          id?: string
+          nationality?: string | null
+          permanent_address?: string | null
+          recommended_by_contact?: string | null
+          recommended_by_org?: string | null
+          temporary_address?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
