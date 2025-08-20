@@ -20,14 +20,11 @@ const Footer = () => {
             
             {/* Social Links */}
             <div className="flex items-center gap-4">
-              <a href="#" className="h-10 w-10 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="Facebook">
+              <a href="https://www.facebook.com/p/Amatya-Tar-Jali-And-steel-Fabricator-100062942455502/" className="h-10 w-10 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="Facebook">
                 <Facebook size={18} />
               </a>
-              <a href="#" className="h-10 w-10 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="Instagram">
+              <a href="https://www.instagram.com/amatyatarjali/" className="h-10 w-10 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="Instagram">
                 <Instagram size={18} />
-              </a>
-              <a href="#" className="h-10 w-10 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="YouTube">
-                <Youtube size={18} />
               </a>
             </div>
           </div>
