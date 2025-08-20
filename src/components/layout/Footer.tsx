@@ -1,20 +1,13 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Youtube } from "lucide-react";
-
 const Footer = () => {
-  return (
-    <footer className="bg-gradient-to-b from-background to-accent/20 border-t">
+  return <footer className="bg-gradient-to-b from-background to-accent/20 border-t">
       <div className="container mx-auto px-4 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-4 group">
-              <img 
-                src="/lovable-uploads/0466aed5-0d14-4c2f-bac7-c512c4448f9b.png" 
-                alt="AIM Technical Institute logo" 
-                className="h-12 w-12 rounded-lg shadow-lg object-contain group-hover:scale-110 transition-transform duration-200" 
-                loading="lazy" 
-              />
+              <img src="/lovable-uploads/0466aed5-0d14-4c2f-bac7-c512c4448f9b.png" alt="AIM Technical Institute logo" className="h-12 w-12 rounded-lg shadow-lg object-contain group-hover:scale-110 transition-transform duration-200" loading="lazy" />
               <div>
                 <span className="text-xl font-bold text-primary">AIM Technical Institute</span>
                 <p className="text-sm text-muted-foreground">सीपको सुरुबात, लक्ष्यबाट !</p>
@@ -27,25 +20,13 @@ const Footer = () => {
             
             {/* Social Links */}
             <div className="flex items-center gap-4">
-              <a 
-                href="#" 
-                className="h-10 w-10 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200 hover:scale-110"
-                aria-label="Facebook"
-              >
+              <a href="#" className="h-10 w-10 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="Facebook">
                 <Facebook size={18} />
               </a>
-              <a 
-                href="#" 
-                className="h-10 w-10 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200 hover:scale-110"
-                aria-label="Instagram"
-              >
+              <a href="#" className="h-10 w-10 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="Instagram">
                 <Instagram size={18} />
               </a>
-              <a 
-                href="#" 
-                className="h-10 w-10 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200 hover:scale-110"
-                aria-label="YouTube"
-              >
+              <a href="#" className="h-10 w-10 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="YouTube">
                 <Youtube size={18} />
               </a>
             </div>
@@ -58,10 +39,7 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <Phone size={18} className="text-primary mt-0.5 flex-shrink-0" />
                 <div>
-                  <a 
-                    href="tel:+9779851404451" 
-                    className="hover:text-primary transition-colors duration-200 font-medium"
-                  >
+                  <a href="tel:+9779851404451" className="hover:text-primary transition-colors duration-200 font-medium">
                     +977 9851404451
                   </a>
                 </div>
@@ -69,10 +47,7 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <Mail size={18} className="text-primary mt-0.5 flex-shrink-0" />
                 <div>
-                  <a 
-                    href="mailto:aimtechnicalinstitute4@gmail.com" 
-                    className="hover:text-primary transition-colors duration-200 text-sm"
-                  >
+                  <a href="mailto:aimtechnicalinstitute4@gmail.com" className="hover:text-primary transition-colors duration-200 text-sm">
                     aimtechnicalinstitute4@gmail.com
                   </a>
                 </div>
@@ -80,7 +55,7 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-primary mt-0.5 flex-shrink-0" />
                 <div className="space-y-1">
-                  <div className="text-muted-foreground">Main Campus: Basundhara, Kathmandu</div>
+                  <div className="text-muted-foreground">Registration office: Basundhara, Kathmandu</div>
                   <div className="text-muted-foreground">Training: Chapali, Budhanilkantha</div>
                 </div>
               </li>
@@ -97,23 +72,29 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4 text-lg">Quick Links</h3>
             <ul className="space-y-2">
-              {[
-                { to: "/courses", label: "Our Courses" },
-                { to: "/about", label: "About Us" },
-                { to: "/gallery", label: "Gallery" },
-                { to: "/founder", label: "Founder" },
-                { to: "/application", label: "Apply Now" },
-                { to: "/contact", label: "Contact" }
-              ].map((link) => (
-                <li key={link.to}>
-                  <Link 
-                    to={link.to} 
-                    className="text-muted-foreground hover:text-primary transition-colors duration-200 hover:underline"
-                  >
+              {[{
+              to: "/courses",
+              label: "Our Courses"
+            }, {
+              to: "/about",
+              label: "About Us"
+            }, {
+              to: "/gallery",
+              label: "Gallery"
+            }, {
+              to: "/founder",
+              label: "Founder"
+            }, {
+              to: "/application",
+              label: "Apply Now"
+            }, {
+              to: "/contact",
+              label: "Contact"
+            }].map(link => <li key={link.to}>
+                  <Link to={link.to} className="text-muted-foreground hover:text-primary transition-colors duration-200 hover:underline">
                     {link.label}
                   </Link>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
         </div>
@@ -131,8 +112,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
