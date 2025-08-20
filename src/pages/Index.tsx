@@ -306,12 +306,6 @@ const Index = () => {
             },
             {
               "@type": "PostalAddress",
-              addressLocality: "Baneshwor",
-              addressRegion: "Kathmandu",
-              addressCountry: "NP"
-            },
-            {
-              "@type": "PostalAddress",
               addressLocality: "Chapali, Budhanilkantha",
               addressRegion: "Kathmandu",
               addressCountry: "NP"

@@ -81,7 +81,6 @@ const Footer = () => {
                 <MapPin size={18} className="text-primary mt-0.5 flex-shrink-0" />
                 <div className="space-y-1">
                   <div className="text-muted-foreground">Main Campus: Basundhara, Kathmandu</div>
-                  <div className="text-muted-foreground">Branch: Baneshwor, Kathmandu</div>
                   <div className="text-muted-foreground">Training: Chapali, Budhanilkantha</div>
                 </div>
               </li>
