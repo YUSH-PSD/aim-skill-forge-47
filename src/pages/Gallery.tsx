@@ -4,12 +4,7 @@ import { SEO } from "@/components/SEO";
 const images = [
   { src: "/lovable-uploads/fd40b42b-097e-49c9-bed4-43f61736fa13.png", alt: "Welding training – close-up SMAW arc at AIM Kathmandu" },
   { src: "/lovable-uploads/315257e2-cc1b-4db1-83da-70e6d697a0a6.png", alt: "Welding practice – creating a secure hitch joint" },
-  { src: "/lovable-uploads/ba6eb486-f3a8-4dd9-a660-bd1e04a05adc.png", alt: "Welding sparks during hands-on session" },
-  { src: "/lovable-uploads/1e013e35-c30b-46de-a102-7e68937b09f3.png", alt: "Industrial welding – student at work" },
-  { src: "/lovable-uploads/3ce8871e-8d96-4ae7-b59a-6aa341987ee8.png", alt: "Close-up of MIG welding torch and arc" },
-  { src: "/lovable-uploads/0992230b-3e47-4b45-a416-1cd18204320f.png", alt: "Bright welding arc and safety gear" },
-  { src: "/lovable-uploads/81d139f5-d8de-4500-82bf-e71316d18762.png", alt: "Welding smoke and sparks – safety-first training" },
-  { src: "/lovable-uploads/8f291caa-a925-49bf-8de7-70d7f9db0087.png", alt: "Molten weld pool during practice" },
+  { src: "/lovable-uploads/ba6eb486-f3a8-4dd9-a660-bd1e04a05adc.png", alt: "Welding sparks during hands-on session" }
 ];
 
 const Gallery = () => {

@@ -49,6 +49,7 @@ const Contact = () => {
             <div className="ml-4 space-y-2">
               <p>• Main Campus: Basundhara, Kathmandu</p>
               <p>• Branch Office: Baneshwor, Kathmandu</p>
+              <p>• Training Center: Chapali, Budhanilkantha</p>
             </div>
             <p><strong>Office Hours:</strong> Sun–Fri, 9am – 5pm</p>
           </div>

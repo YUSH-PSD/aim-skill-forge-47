@@ -82,6 +82,7 @@ const Footer = () => {
                 <div className="space-y-1">
                   <div className="text-muted-foreground">Main Campus: Basundhara, Kathmandu</div>
                   <div className="text-muted-foreground">Branch: Baneshwor, Kathmandu</div>
+                  <div className="text-muted-foreground">Training: Chapali, Budhanilkantha</div>
                 </div>
               </li>
               <li className="flex items-start gap-3">

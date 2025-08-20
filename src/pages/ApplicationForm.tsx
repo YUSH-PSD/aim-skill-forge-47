@@ -463,6 +463,14 @@ const ApplicationForm = () => {
                           />
                           <Label htmlFor="arc-mig-welding" className="text-sm font-medium">Arc + Mig Welding</Label>
                         </div>
+                        <div className="flex items-center space-x-2 p-3 rounded-lg border border-input hover:border-primary/50 transition-colors">
+                          <Checkbox 
+                            id="arc-mig-tig-welding"
+                            checked={formData.courses.includes("Arc + MIG + TIG Welding")}
+                            onCheckedChange={(checked) => handleCheckboxChange("Arc + MIG + TIG Welding", checked)}
+                          />
+                          <Label htmlFor="arc-mig-tig-welding" className="text-sm font-medium">Arc + MIG + TIG Welding</Label>
+                        </div>
                       </div>
                     </div>
                   </div>

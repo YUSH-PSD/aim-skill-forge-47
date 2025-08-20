@@ -95,9 +95,9 @@ const Index = () => {
               </Button>
               <Button 
                 asChild 
-                variant="outline" 
+                variant="secondary" 
                 size="lg" 
-                className="w-full sm:w-auto sm:min-w-[180px] lg:min-w-[200px] border-2 border-white/30 text-white hover:border-white/60 hover:bg-white/10 transition-all duration-300 hover:scale-105 text-sm sm:text-base"
+                className="w-full sm:w-auto sm:min-w-[180px] lg:min-w-[200px] text-sm sm:text-base"
               >
                 <Link to="/courses">Explore Courses</Link>
               </Button>
@@ -307,6 +307,12 @@ const Index = () => {
             {
               "@type": "PostalAddress",
               addressLocality: "Baneshwor",
+              addressRegion: "Kathmandu",
+              addressCountry: "NP"
+            },
+            {
+              "@type": "PostalAddress",
+              addressLocality: "Chapali, Budhanilkantha",
               addressRegion: "Kathmandu",
               addressCountry: "NP"
             }
