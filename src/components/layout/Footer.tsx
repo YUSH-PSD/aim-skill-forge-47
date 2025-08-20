@@ -79,8 +79,9 @@ const Footer = () => {
               </li>
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-primary mt-0.5 flex-shrink-0" />
-                <div>
-                  <span className="text-muted-foreground">Basundhara, Kathmandu, Nepal</span>
+                <div className="space-y-1">
+                  <div className="text-muted-foreground">Main Campus: Basundhara, Kathmandu</div>
+                  <div className="text-muted-foreground">Branch: Baneshwor, Kathmandu</div>
                 </div>
               </li>
               <li className="flex items-start gap-3">

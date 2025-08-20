@@ -45,7 +45,11 @@ const Contact = () => {
             <a className="hover:underline ml-1" href="mailto:aimtechnicalinstitute4@gmail.com">aimtechnicalinstitute4@gmail.com</a>
           </p>
           <div className="space-y-3 text-sm text-muted-foreground">
-            <p><strong>Location:</strong> Basundhara, Kathmandu</p>
+            <p><strong>Locations:</strong></p>
+            <div className="ml-4 space-y-2">
+              <p>• Main Campus: Basundhara, Kathmandu</p>
+              <p>• Branch Office: Baneshwor, Kathmandu</p>
+            </div>
             <p><strong>Office Hours:</strong> Sun–Fri, 9am – 5pm</p>
           </div>
         </div>

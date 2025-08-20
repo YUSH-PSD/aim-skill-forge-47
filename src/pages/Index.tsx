@@ -297,12 +297,20 @@ const Index = () => {
           logo: "/lovable-uploads/0466aed5-0d14-4c2f-bac7-c512c4448f9b.png",
           email: "aimtechnicalinstitute4@gmail.com",
           telephone: "+977-9851404451",
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: "Basundhara",
-            addressRegion: "Kathmandu",
-            addressCountry: "NP"
-          }
+          address: [
+            {
+              "@type": "PostalAddress",
+              addressLocality: "Basundhara",
+              addressRegion: "Kathmandu",
+              addressCountry: "NP"
+            },
+            {
+              "@type": "PostalAddress",
+              addressLocality: "Baneshwor",
+              addressRegion: "Kathmandu",
+              addressCountry: "NP"
+            }
+          ]
         })
       }} />
     </main>
