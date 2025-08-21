@@ -23,7 +23,7 @@ const Footer = () => {
               <a href="https://www.facebook.com/p/Amatya-Tar-Jali-And-steel-Fabricator-100062942455502/" className="h-10 w-10 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="Facebook">
                 <Facebook size={18} />
               </a>
-              <a href="https://www.instagram.com/amatyatarjali/" className="h-10 w-10 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="Instagram">
+              <a href="https://www.instagram.com/instagram/" className="h-10 w-10 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="Instagram">
                 <Instagram size={18} />
               </a>
             </div>
