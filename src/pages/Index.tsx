@@ -30,7 +30,7 @@ const Index = () => {
         {/* YouTube Video Background */}
         <div className="absolute inset-0 -z-10">
           <iframe
-            src="https://www.youtube.com/embed/rhpwYcxFa3c?autoplay=1&mute=1&loop=1&playlist=rhpwYcxFa3c&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&enablejsapi=1"
+            src="https://www.youtube.com/embed/rhpwYcxFa3c?autoplay=1&mute=1&loop=1&playlist=rhpwYcxFa3c&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&enablejsapi=1&cc_load_policy=0&disablekb=1&fs=0&playsinline=1&start=1"
             className="absolute inset-0 w-full h-full"
             style={{
               width: '100vw',
