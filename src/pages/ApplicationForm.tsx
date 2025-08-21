@@ -8,9 +8,10 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { SEO } from "@/components/SEO";
 import { useToast } from "@/hooks/use-toast";
-
 const ApplicationForm = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [formData, setFormData] = useState({
     fullName: "",
     educationalQualification: "",
@@ -31,26 +32,23 @@ const ApplicationForm = () => {
     agreementAccepted: false,
     digitalSignature: ""
   });
-
   const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
+  const handleInputChange = e => {
+    const {
+      name,
+      value
+    } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
   };
-
   const handleCheckboxChange = (course, checked) => {
     setFormData(prev => ({
       ...prev,
-      courses: checked 
-        ? [...prev.courses, course]
-        : prev.courses.filter(c => c !== course)
+      courses: checked ? [...prev.courses, course] : prev.courses.filter(c => c !== course)
     }));
   };
-
   const handleClearForm = () => {
     setFormData({
       fullName: "",
@@ -74,22 +72,19 @@ const ApplicationForm = () => {
     });
     toast({
       title: "Form Cleared",
-      description: "All fields have been reset.",
+      description: "All fields have been reset."
     });
   };
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    
     if (!formData.fullName || !formData.agreementAccepted) {
       toast({
         title: "Missing Required Fields",
         description: "Please fill in all required fields and accept the declaration.",
-        variant: "destructive",
+        variant: "destructive"
       });
       return;
     }
-
     try {
       // Submit to Supabase edge function
       const response = await fetch(`https://hmkcyuwurxadufassayc.supabase.co/functions/v1/submit-application`, {
@@ -100,14 +95,12 @@ const ApplicationForm = () => {
         },
         body: JSON.stringify(formData)
       });
-
       const result = await response.json();
-
       if (result.success) {
         setIsSubmitted(true);
         toast({
           title: "Application Submitted Successfully!",
-          description: "Thank you for applying to AIM Technical Institute. We will contact you soon.",
+          description: "Thank you for applying to AIM Technical Institute. We will contact you soon."
         });
       } else {
         throw new Error(result.error || 'Submission failed');
@@ -117,18 +110,13 @@ const ApplicationForm = () => {
       toast({
         title: "Submission Failed",
         description: "There was an error submitting your application. Please try again.",
-        variant: "destructive",
+        variant: "destructive"
       });
     }
   };
-
   if (isSubmitted) {
-    return (
-      <>
-        <SEO 
-          title="Application Submitted - AIM Technical Institute"
-          description="Your welding training application has been submitted successfully."
-        />
+    return <>
+        <SEO title="Application Submitted - AIM Technical Institute" description="Your welding training application has been submitted successfully." />
         <div className="min-h-screen bg-muted flex items-center justify-center p-4">
           <Card className="max-w-md w-full">
             <CardContent className="p-8 text-center">
@@ -147,16 +135,10 @@ const ApplicationForm = () => {
             </CardContent>
           </Card>
         </div>
-      </>
-    );
+      </>;
   }
-
-  return (
-    <>
-      <SEO 
-        title="Welding Training Application Form - AIM Technical Institute"
-        description="Apply for professional welding training courses at AIM Technical Institute, Kathmandu, Nepal. Fill out our comprehensive application form online."
-      />
+  return <>
+      <SEO title="Welding Training Application Form - AIM Technical Institute" description="Apply for professional welding training courses at AIM Technical Institute, Kathmandu, Nepal. Fill out our comprehensive application form online." />
       
       <div className="min-h-screen bg-gradient-to-br from-background via-muted/30 to-background py-8 px-4">
         <div className="max-w-3xl mx-auto">
@@ -167,11 +149,7 @@ const ApplicationForm = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent transform -skew-x-12 animate-[shimmer_3s_ease-in-out_infinite]"></div>
                 <div className="text-center relative z-10">
                   <div className="w-20 h-20 mx-auto mb-4 animate-scale-in">
-                    <img 
-                      src="/lovable-uploads/0466aed5-0d14-4c2f-bac7-c512c4448f9b.png" 
-                      alt="AIM Technical Institute logo" 
-                      className="w-full h-full object-contain rounded-full shadow-2xl transition-transform duration-300 hover:scale-110" 
-                    />
+                    <img src="/lovable-uploads/0466aed5-0d14-4c2f-bac7-c512c4448f9b.png" alt="AIM Technical Institute logo" className="w-full h-full object-contain rounded-full shadow-2xl transition-transform duration-300 hover:scale-110" />
                   </div>
                 </div>
               </div>
@@ -180,7 +158,10 @@ const ApplicationForm = () => {
               <div className="bg-gradient-to-br from-primary/5 via-background to-secondary/5 p-8 relative">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(120,119,198,0.1),transparent)]"></div>
                 <div className="relative z-10">
-                  <div className="text-center mb-8 animate-fade-in" style={{animationDelay: '0.2s', animationFillMode: 'both'}}>
+                  <div className="text-center mb-8 animate-fade-in" style={{
+                  animationDelay: '0.2s',
+                  animationFillMode: 'both'
+                }}>
                     <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-4">
                       Student Application Portal
                     </h1>
@@ -188,7 +169,10 @@ const ApplicationForm = () => {
                   </div>
                   
                   <div className="grid md:grid-cols-3 gap-6 mb-8">
-                    <div className="bg-card/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-border/50 hover-scale transition-all duration-500 hover:shadow-xl animate-fade-in group" style={{animationDelay: '0.4s', animationFillMode: 'both'}}>
+                    <div className="bg-card/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-border/50 hover-scale transition-all duration-500 hover:shadow-xl animate-fade-in group" style={{
+                    animationDelay: '0.4s',
+                    animationFillMode: 'both'
+                  }}>
                       <div className="text-center">
                         <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
                           <svg className="w-6 h-6 text-primary transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -200,7 +184,10 @@ const ApplicationForm = () => {
                       </div>
                     </div>
                     
-                    <div className="bg-card/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-border/50 hover-scale transition-all duration-500 hover:shadow-xl animate-fade-in group" style={{animationDelay: '0.6s', animationFillMode: 'both'}}>
+                    <div className="bg-card/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-border/50 hover-scale transition-all duration-500 hover:shadow-xl animate-fade-in group" style={{
+                    animationDelay: '0.6s',
+                    animationFillMode: 'both'
+                  }}>
                       <div className="text-center">
                         <div className="w-12 h-12 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
                           <svg className="w-6 h-6 text-secondary transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -212,7 +199,10 @@ const ApplicationForm = () => {
                       </div>
                     </div>
                     
-                    <div className="bg-card/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-border/50 hover-scale transition-all duration-500 hover:shadow-xl animate-fade-in group" style={{animationDelay: '0.8s', animationFillMode: 'both'}}>
+                    <div className="bg-card/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-border/50 hover-scale transition-all duration-500 hover:shadow-xl animate-fade-in group" style={{
+                    animationDelay: '0.8s',
+                    animationFillMode: 'both'
+                  }}>
                       <div className="text-center">
                         <div className="w-12 h-12 bg-gradient-to-br from-accent/20 to-accent/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
                           <svg className="w-6 h-6 text-accent transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -230,36 +220,24 @@ const ApplicationForm = () => {
               <div className="p-8">
                 <form onSubmit={handleSubmit} className="space-y-8">
                   {/* Personal Information Section */}
-                  <div className="space-y-6 animate-fade-in" style={{animationDelay: '1s', animationFillMode: 'both'}}>
+                  <div className="space-y-6 animate-fade-in" style={{
+                  animationDelay: '1s',
+                  animationFillMode: 'both'
+                }}>
                     <h2 className="text-xl font-semibold text-primary border-b pb-2">Personal Information</h2>
                     
                     <div className="space-y-2 group">
                       <Label htmlFor="fullName" className="text-sm font-medium text-foreground transition-colors duration-200 group-focus-within:text-primary">
                         Full Name <span className="text-destructive">*</span>
                       </Label>
-                      <Input
-                        id="fullName"
-                        name="fullName"
-                        value={formData.fullName}
-                        onChange={handleInputChange}
-                        placeholder="Enter your full name"
-                        className="text-base py-3 transition-all duration-300 focus:ring-2 focus:ring-primary/50 border-input hover:border-primary/50 focus:shadow-lg focus:scale-[1.02] hover:shadow-md"
-                        required
-                      />
+                      <Input id="fullName" name="fullName" value={formData.fullName} onChange={handleInputChange} placeholder="Enter your full name" className="text-base py-3 transition-all duration-300 focus:ring-2 focus:ring-primary/50 border-input hover:border-primary/50 focus:shadow-lg focus:scale-[1.02] hover:shadow-md" required />
                     </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="educationalQualification" className="text-sm font-medium text-foreground">
                         Educational Qualification
                       </Label>
-                      <Input
-                        id="educationalQualification"
-                        name="educationalQualification"
-                        value={formData.educationalQualification}
-                        onChange={handleInputChange}
-                        placeholder="e.g., SLC, +2, Bachelor's Degree"
-                        className="text-base py-3 transition-all duration-200 focus:ring-2 focus:ring-primary/50 border-input hover:border-primary/50"
-                      />
+                      <Input id="educationalQualification" name="educationalQualification" value={formData.educationalQualification} onChange={handleInputChange} placeholder="e.g., SLC, +2, Bachelor's Degree" className="text-base py-3 transition-all duration-200 focus:ring-2 focus:ring-primary/50 border-input hover:border-primary/50" />
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-6">
@@ -267,29 +245,13 @@ const ApplicationForm = () => {
                         <Label htmlFor="permanentAddress" className="text-sm font-medium text-foreground">
                           Permanent Address
                         </Label>
-                        <Textarea
-                          id="permanentAddress"
-                          name="permanentAddress"
-                          value={formData.permanentAddress}
-                          onChange={handleInputChange}
-                          placeholder="Enter your permanent address"
-                          className="text-base py-3 transition-all duration-200 focus:ring-2 focus:ring-primary/50 border-input hover:border-primary/50 resize-none"
-                          rows={3}
-                        />
+                        <Textarea id="permanentAddress" name="permanentAddress" value={formData.permanentAddress} onChange={handleInputChange} placeholder="Enter your permanent address" className="text-base py-3 transition-all duration-200 focus:ring-2 focus:ring-primary/50 border-input hover:border-primary/50 resize-none" rows={3} />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="temporaryAddress" className="text-sm font-medium text-foreground">
                           Temporary Address
                         </Label>
-                        <Textarea
-                          id="temporaryAddress"
-                          name="temporaryAddress"
-                          value={formData.temporaryAddress}
-                          onChange={handleInputChange}
-                          placeholder="Enter your temporary address"
-                          className="text-base py-3 transition-all duration-200 focus:ring-2 focus:ring-primary/50 border-input hover:border-primary/50 resize-none"
-                          rows={3}
-                        />
+                        <Textarea id="temporaryAddress" name="temporaryAddress" value={formData.temporaryAddress} onChange={handleInputChange} placeholder="Enter your temporary address" className="text-base py-3 transition-all duration-200 focus:ring-2 focus:ring-primary/50 border-input hover:border-primary/50 resize-none" rows={3} />
                       </div>
                     </div>
 
@@ -298,28 +260,13 @@ const ApplicationForm = () => {
                         <Label htmlFor="contactNumber" className="text-sm font-medium text-foreground">
                           Contact Number
                         </Label>
-                        <Input
-                          id="contactNumber"
-                          name="contactNumber"
-                          value={formData.contactNumber}
-                          onChange={handleInputChange}
-                          placeholder="Enter your phone number"
-                          className="text-base py-3 transition-all duration-200 focus:ring-2 focus:ring-primary/50 border-input hover:border-primary/50"
-                        />
+                        <Input id="contactNumber" name="contactNumber" value={formData.contactNumber} onChange={handleInputChange} placeholder="Enter your phone number" className="text-base py-3 transition-all duration-200 focus:ring-2 focus:ring-primary/50 border-input hover:border-primary/50" />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="email" className="text-sm font-medium text-foreground">
                           Email Address
                         </Label>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          placeholder="Enter your email address"
-                          className="text-base py-3 transition-all duration-200 focus:ring-2 focus:ring-primary/50 border-input hover:border-primary/50"
-                        />
+                        <Input id="email" name="email" type="email" value={formData.email} onChange={handleInputChange} placeholder="Enter your email address" className="text-base py-3 transition-all duration-200 focus:ring-2 focus:ring-primary/50 border-input hover:border-primary/50" />
                       </div>
                     </div>
 
@@ -328,36 +275,20 @@ const ApplicationForm = () => {
                         <Label htmlFor="dateOfBirth" className="text-sm font-medium text-foreground">
                           Date of Birth
                         </Label>
-                        <Input
-                          id="dateOfBirth"
-                          name="dateOfBirth"
-                          type="date"
-                          value={formData.dateOfBirth}
-                          onChange={handleInputChange}
-                          className="text-base py-3 transition-all duration-200 focus:ring-2 focus:ring-primary/50 border-input hover:border-primary/50"
-                        />
+                        <Input id="dateOfBirth" name="dateOfBirth" type="date" value={formData.dateOfBirth} onChange={handleInputChange} className="text-base py-3 transition-all duration-200 focus:ring-2 focus:ring-primary/50 border-input hover:border-primary/50" />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="age" className="text-sm font-medium text-foreground">
                           Age
                         </Label>
-                        <Input
-                          id="age"
-                          name="age"
-                          type="number"
-                          value={formData.age}
-                          onChange={handleInputChange}
-                          placeholder="Age"
-                          className="text-base py-3 transition-all duration-200 focus:ring-2 focus:ring-primary/50 border-input hover:border-primary/50"
-                        />
+                        <Input id="age" name="age" type="number" value={formData.age} onChange={handleInputChange} placeholder="Age" className="text-base py-3 transition-all duration-200 focus:ring-2 focus:ring-primary/50 border-input hover:border-primary/50" />
                       </div>
                       <div className="space-y-2">
                         <Label className="text-sm font-medium text-foreground">Gender</Label>
-                        <RadioGroup 
-                          value={formData.gender} 
-                          onValueChange={(value) => setFormData(prev => ({...prev, gender: value}))}
-                          className="flex gap-4 pt-2"
-                        >
+                        <RadioGroup value={formData.gender} onValueChange={value => setFormData(prev => ({
+                        ...prev,
+                        gender: value
+                      }))} className="flex gap-4 pt-2">
                           <div className="flex items-center space-x-2">
                             <RadioGroupItem value="male" id="male" />
                             <Label htmlFor="male" className="text-sm">Male</Label>
@@ -379,33 +310,22 @@ const ApplicationForm = () => {
                         <Label htmlFor="nationality" className="text-sm font-medium text-foreground">
                           Nationality
                         </Label>
-                        <Input
-                          id="nationality"
-                          name="nationality"
-                          value={formData.nationality}
-                          onChange={handleInputChange}
-                          placeholder="e.g., Nepali"
-                          className="text-base py-3 transition-all duration-200 focus:ring-2 focus:ring-primary/50 border-input hover:border-primary/50"
-                        />
+                        <Input id="nationality" name="nationality" value={formData.nationality} onChange={handleInputChange} placeholder="e.g., Nepali" className="text-base py-3 transition-all duration-200 focus:ring-2 focus:ring-primary/50 border-input hover:border-primary/50" />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="citizenshipNo" className="text-sm font-medium text-foreground">
                           Citizenship Number
                         </Label>
-                        <Input
-                          id="citizenshipNo"
-                          name="citizenshipNo"
-                          value={formData.citizenshipNo}
-                          onChange={handleInputChange}
-                          placeholder="Enter citizenship number"
-                          className="text-base py-3 transition-all duration-200 focus:ring-2 focus:ring-primary/50 border-input hover:border-primary/50"
-                        />
+                        <Input id="citizenshipNo" name="citizenshipNo" value={formData.citizenshipNo} onChange={handleInputChange} placeholder="Enter citizenship number" className="text-base py-3 transition-all duration-200 focus:ring-2 focus:ring-primary/50 border-input hover:border-primary/50" />
                       </div>
                     </div>
                   </div>
 
                   {/* Guardian Information */}
-                  <div className="space-y-6 animate-fade-in" style={{animationDelay: '1.2s', animationFillMode: 'both'}}>
+                  <div className="space-y-6 animate-fade-in" style={{
+                  animationDelay: '1.2s',
+                  animationFillMode: 'both'
+                }}>
                     <h2 className="text-xl font-semibold text-primary border-b pb-2 transition-colors duration-300 hover:text-primary/80">Guardian Information</h2>
                     
                     <div className="grid md:grid-cols-2 gap-6">
@@ -413,33 +333,22 @@ const ApplicationForm = () => {
                         <Label htmlFor="guardianName" className="text-sm font-medium text-foreground">
                           Guardian Name
                         </Label>
-                        <Input
-                          id="guardianName"
-                          name="guardianName"
-                          value={formData.guardianName}
-                          onChange={handleInputChange}
-                          placeholder="Enter guardian's name"
-                          className="text-base py-3 transition-all duration-200 focus:ring-2 focus:ring-primary/50 border-input hover:border-primary/50"
-                        />
+                        <Input id="guardianName" name="guardianName" value={formData.guardianName} onChange={handleInputChange} placeholder="Enter guardian's name" className="text-base py-3 transition-all duration-200 focus:ring-2 focus:ring-primary/50 border-input hover:border-primary/50" />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="guardianContact" className="text-sm font-medium text-foreground">
                           Guardian Contact Number
                         </Label>
-                        <Input
-                          id="guardianContact"
-                          name="guardianContact"
-                          value={formData.guardianContact}
-                          onChange={handleInputChange}
-                          placeholder="Enter guardian's contact number"
-                          className="text-base py-3 transition-all duration-200 focus:ring-2 focus:ring-primary/50 border-input hover:border-primary/50"
-                        />
+                        <Input id="guardianContact" name="guardianContact" value={formData.guardianContact} onChange={handleInputChange} placeholder="Enter guardian's contact number" className="text-base py-3 transition-all duration-200 focus:ring-2 focus:ring-primary/50 border-input hover:border-primary/50" />
                       </div>
                     </div>
                   </div>
 
                   {/* Course Selection */}
-                  <div className="space-y-6 animate-fade-in" style={{animationDelay: '1.4s', animationFillMode: 'both'}}>
+                  <div className="space-y-6 animate-fade-in" style={{
+                  animationDelay: '1.4s',
+                  animationFillMode: 'both'
+                }}>
                     <h2 className="text-xl font-semibold text-primary border-b pb-2 transition-colors duration-300 hover:text-primary/80">Course Selection</h2>
                     
                     <div className="space-y-2">
@@ -448,28 +357,16 @@ const ApplicationForm = () => {
                       </Label>
                       <div className="grid md:grid-cols-2 gap-4 pt-2">
                         <div className="flex items-center space-x-2 p-3 rounded-lg border border-input hover:border-primary/50 transition-colors">
-                          <Checkbox 
-                            id="arc-welding"
-                            checked={formData.courses.includes("Arc Welding")}
-                            onCheckedChange={(checked) => handleCheckboxChange("Arc Welding", checked)}
-                          />
+                          <Checkbox id="arc-welding" checked={formData.courses.includes("Arc Welding")} onCheckedChange={checked => handleCheckboxChange("Arc Welding", checked)} />
                           <Label htmlFor="arc-welding" className="text-sm font-medium">Arc Welding</Label>
                         </div>
                         <div className="flex items-center space-x-2 p-3 rounded-lg border border-input hover:border-primary/50 transition-colors">
-                          <Checkbox 
-                            id="arc-mig-welding"
-                            checked={formData.courses.includes("Arc + Mig Welding")}
-                            onCheckedChange={(checked) => handleCheckboxChange("Arc + Mig Welding", checked)}
-                          />
+                          <Checkbox id="arc-mig-welding" checked={formData.courses.includes("Arc + Mig Welding")} onCheckedChange={checked => handleCheckboxChange("Arc + Mig Welding", checked)} />
                           <Label htmlFor="arc-mig-welding" className="text-sm font-medium">Arc + Mig Welding</Label>
                         </div>
                         <div className="flex items-center space-x-2 p-3 rounded-lg border border-input hover:border-primary/50 transition-colors">
-                          <Checkbox 
-                            id="arc-mig-tig-welding"
-                            checked={formData.courses.includes("Arc + MIG + TIG Welding")}
-                            onCheckedChange={(checked) => handleCheckboxChange("Arc + MIG + TIG Welding", checked)}
-                          />
-                          <Label htmlFor="arc-mig-tig-welding" className="text-sm font-medium">Arc + MIG + TIG Welding</Label>
+                          <Checkbox id="arc-mig-tig-welding" checked={formData.courses.includes("Arc + MIG + TIG Welding")} onCheckedChange={checked => handleCheckboxChange("Arc + MIG + TIG Welding", checked)} />
+                          <Label htmlFor="arc-mig-tig-welding" className="text-sm font-medium">Arc + Mig + Tig Welding</Label>
                         </div>
                       </div>
                     </div>
@@ -484,27 +381,13 @@ const ApplicationForm = () => {
                         <Label htmlFor="recommendedByOrg" className="text-sm font-medium text-foreground">
                           Recommended by Organization
                         </Label>
-                        <Input
-                          id="recommendedByOrg"
-                          name="recommendedByOrg"
-                          value={formData.recommendedByOrg}
-                          onChange={handleInputChange}
-                          placeholder="Organization name"
-                          className="text-base py-3 transition-all duration-200 focus:ring-2 focus:ring-primary/50 border-input hover:border-primary/50"
-                        />
+                        <Input id="recommendedByOrg" name="recommendedByOrg" value={formData.recommendedByOrg} onChange={handleInputChange} placeholder="Organization name" className="text-base py-3 transition-all duration-200 focus:ring-2 focus:ring-primary/50 border-input hover:border-primary/50" />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="recommendedByContact" className="text-sm font-medium text-foreground">
                           Organization Contact Number
                         </Label>
-                        <Input
-                          id="recommendedByContact"
-                          name="recommendedByContact"
-                          value={formData.recommendedByContact}
-                          onChange={handleInputChange}
-                          placeholder="Contact number"
-                          className="text-base py-3 transition-all duration-200 focus:ring-2 focus:ring-primary/50 border-input hover:border-primary/50"
-                        />
+                        <Input id="recommendedByContact" name="recommendedByContact" value={formData.recommendedByContact} onChange={handleInputChange} placeholder="Contact number" className="text-base py-3 transition-all duration-200 focus:ring-2 focus:ring-primary/50 border-input hover:border-primary/50" />
                       </div>
                     </div>
                   </div>
@@ -519,12 +402,10 @@ const ApplicationForm = () => {
                       </p>
                       
                       <div className="flex items-start space-x-2">
-                         <Checkbox 
-                           id="agreement"
-                           checked={formData.agreementAccepted}
-                           onCheckedChange={(checked) => setFormData(prev => ({...prev, agreementAccepted: !!checked}))}
-                           required
-                         />
+                         <Checkbox id="agreement" checked={formData.agreementAccepted} onCheckedChange={checked => setFormData(prev => ({
+                        ...prev,
+                        agreementAccepted: !!checked
+                      }))} required />
                         <Label htmlFor="agreement" className="text-sm font-medium leading-tight">
                           I agree to the declaration <span className="text-destructive">*</span>
                         </Label>
@@ -535,32 +416,20 @@ const ApplicationForm = () => {
                       <Label htmlFor="digitalSignature" className="text-sm font-medium text-foreground">
                         Digital Signature (Optional)
                       </Label>
-                      <Input
-                        id="digitalSignature"
-                        name="digitalSignature"
-                        value={formData.digitalSignature}
-                        onChange={handleInputChange}
-                        placeholder="Type your full name as digital signature"
-                        className="text-base py-3 transition-all duration-200 focus:ring-2 focus:ring-primary/50 border-input hover:border-primary/50"
-                      />
+                      <Input id="digitalSignature" name="digitalSignature" value={formData.digitalSignature} onChange={handleInputChange} placeholder="Type your full name as digital signature" className="text-base py-3 transition-all duration-200 focus:ring-2 focus:ring-primary/50 border-input hover:border-primary/50" />
                     </div>
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-4 pt-6 animate-fade-in" style={{animationDelay: '1.6s', animationFillMode: 'both'}}>
-                    <Button 
-                      type="submit" 
-                      className="flex-1 py-3 text-base font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground transition-all duration-300 hover:scale-105 hover:shadow-lg shadow-md group relative overflow-hidden"
-                    >
+                  <div className="flex flex-col sm:flex-row gap-4 pt-6 animate-fade-in" style={{
+                  animationDelay: '1.6s',
+                  animationFillMode: 'both'
+                }}>
+                    <Button type="submit" className="flex-1 py-3 text-base font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground transition-all duration-300 hover:scale-105 hover:shadow-lg shadow-md group relative overflow-hidden">
                       <span className="relative z-10">Submit Application</span>
                       <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent transform -skew-x-12 transition-transform duration-700 -translate-x-full group-hover:translate-x-full"></div>
                     </Button>
-                    <Button 
-                      type="button" 
-                      variant="outline"
-                      onClick={handleClearForm}
-                      className="flex-1 py-3 text-base font-medium border-2 border-border hover:border-primary/60 transition-all duration-300 hover:scale-105 hover:shadow-md hover:bg-primary/5"
-                    >
+                    <Button type="button" variant="outline" onClick={handleClearForm} className="flex-1 py-3 text-base font-medium border-2 border-border hover:border-primary/60 transition-all duration-300 hover:scale-105 hover:shadow-md hover:bg-primary/5">
                       Clear Form
                     </Button>
                   </div>
@@ -570,8 +439,6 @@ const ApplicationForm = () => {
           </Card>
         </div>
       </div>
-    </>
-  );
+    </>;
 };
-
 export default ApplicationForm;
