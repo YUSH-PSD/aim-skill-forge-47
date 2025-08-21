@@ -20,7 +20,7 @@ const Footer = () => {
             
             {/* Social Links */}
             <div className="flex items-center gap-4">
-              <a href="https://www.facebook.com/p/Amatya-Tar-Jali-And-steel-Fabricator-100062942455502/" className="h-10 w-10 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="Facebook">
+              <a href="https://www.facebook.com/profile.php?id=61579165747409" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="Facebook">
                 <Facebook size={18} />
               </a>
               <a href="https://www.instagram.com/aim.technical/" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="Instagram">
