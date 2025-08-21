@@ -71,6 +71,12 @@ const courses = [
     image: "/lovable-uploads/cbb816d9-0c1f-4c94-87ca-173cc95b480e.png"
   },
   { 
+    title: "Tig Welding", 
+    icon: Sparkles, 
+    description: "Tungsten Inert Gas welding for precision work and high-quality finishes.",
+    image: "/lovable-uploads/87fed847-da62-4f48-922b-27edba1ca41b.png"
+  },
+  { 
     title: "Aluminium Fabrication", 
     icon: Sparkles, 
     description: "Aluminum welding, cutting, and fabrication for industrial applications.",
