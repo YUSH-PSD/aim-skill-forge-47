@@ -31,7 +31,7 @@ const Index = () => {
     // Completely hide after fade transition completes
     const hideTimer = setTimeout(() => {
       setShowVideoLoading(false);
-    }, 4500); // 2.5s delay + 2s transition
+    }, 5500); // 2.5s delay + 3s transition
 
     return () => {
       clearTimeout(fadeTimer);
@@ -75,7 +75,7 @@ const Index = () => {
           {/* Black screen overlay to hide loading */}
           {showVideoLoading && (
             <div 
-              className="absolute inset-0 bg-black z-50 transition-opacity duration-[2000ms] ease-out"
+              className="absolute inset-0 bg-black z-50 transition-opacity duration-[3000ms] ease-in-out"
               style={{ opacity: videoOpacity }}
             />
           )}
