@@ -1,13 +1,7 @@
 import { SEO } from "@/components/SEO";
-
 const About = () => {
-  return (
-    <main>
-      <SEO
-        title="About AIM Technical Institute"
-        description="We empower people with hands-on, industry-relevant technical training to become confident and job-ready."
-        path="/about"
-      />
+  return <main>
+      <SEO title="About AIM Technical Institute" description="We empower people with hands-on, industry-relevant technical training to become confident and job-ready." path="/about" />
       <section className="container mx-auto py-12 md:py-20">
         {/* Hero Section */}
         <div className="text-center mb-16">
@@ -24,7 +18,7 @@ const About = () => {
             <div className="relative bg-card p-8 md:p-12 rounded-2xl border">
               {/* Nepali Version */}
               <div className="mb-8 pb-8 border-b border-primary/20">
-                <h3 className="text-lg font-semibold text-primary mb-4">नेपालीमा</h3>
+                
                 <p className="text-lg md:text-xl leading-relaxed text-foreground mb-6">
                   <span className="font-semibold text-primary">AIM Technical Institute Pvt. Ltd.</span> को स्थापना एक स्पष्ट उद्देश्यका साथ गरिएको हो - आजको प्रतिस्पर्धी संसारमा सफल हुनका लागि आवश्यक सीपहरूसँग व्यक्तिहरूलाई सुसज्जित बनाउने। हामी विश्वास गर्छौं कि व्यावहारिक, हातमा हात मिलाउने तालिम नेपालमा होस् वा विदेशमा, करियरका अवसरहरू खोल्ने कुञ्जी हो।
                 </p>
@@ -35,7 +29,7 @@ const About = () => {
               
               {/* English Version */}
               <div>
-                <h3 className="text-lg font-semibold text-primary mb-4">In English</h3>
+                
                 <p className="text-lg md:text-xl leading-relaxed text-foreground mb-6">
                   <span className="font-semibold text-primary">AIM Technical Institute Pvt. Ltd.</span> was established with a clear purpose – to equip individuals with the skills they need to succeed in today&apos;s competitive world. We believe that practical, hands-on training is the key to unlocking career opportunities, whether here in Nepal or abroad.
                 </p>
@@ -60,8 +54,6 @@ const About = () => {
           </div>
         </div>
       </section>
-    </main>
-  );
+    </main>;
 };
-
 export default About;
