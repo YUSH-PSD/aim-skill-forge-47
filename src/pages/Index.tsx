@@ -15,6 +15,7 @@ const backgroundImages = [
 
 const Index = () => {
   const [showVideoLoading, setShowVideoLoading] = useState(true);
+  const [videoOpacity, setVideoOpacity] = useState(1);
   const { ref: heroRef, isIntersecting: isHeroIntersecting } = useIntersectionObserver();
   const { ref: featuresRef, isIntersecting: isFeaturesIntersecting } = useIntersectionObserver();
   const { ref: coursesRef, isIntersecting: isCoursesIntersecting } = useIntersectionObserver();
@@ -22,12 +23,20 @@ const Index = () => {
   const { ref: ctaRef, isIntersecting: isCtaIntersecting } = useIntersectionObserver();
 
   useEffect(() => {
-    // Hide the black screen after 3 seconds to allow video to load
-    const timer = setTimeout(() => {
-      setShowVideoLoading(false);
-    }, 3000);
+    // Start fading out after 2.5 seconds
+    const fadeTimer = setTimeout(() => {
+      setVideoOpacity(0);
+    }, 2500);
 
-    return () => clearTimeout(timer);
+    // Completely hide after fade transition completes
+    const hideTimer = setTimeout(() => {
+      setShowVideoLoading(false);
+    }, 4500); // 2.5s delay + 2s transition
+
+    return () => {
+      clearTimeout(fadeTimer);
+      clearTimeout(hideTimer);
+    };
   }, []);
 
   return (
@@ -65,7 +74,10 @@ const Index = () => {
           
           {/* Black screen overlay to hide loading */}
           {showVideoLoading && (
-            <div className="absolute inset-0 bg-black z-50 transition-opacity duration-1000 opacity-100" />
+            <div 
+              className="absolute inset-0 bg-black z-50 transition-opacity duration-[2000ms] ease-out"
+              style={{ opacity: videoOpacity }}
+            />
           )}
         </div>
         
