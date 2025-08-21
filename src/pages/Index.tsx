@@ -5,6 +5,7 @@ import { SEO } from "@/components/SEO";
 import { ShieldCheck, Wrench, GraduationCap, Users, Clock, Building, CheckCircle, ArrowRight, BookOpen, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { useState, useEffect } from "react";
 
 const backgroundImages = [
   "/lovable-uploads/dc937378-28d0-467a-9880-c7998802295a.png", // Planning/Engineering
@@ -13,11 +14,21 @@ const backgroundImages = [
 ];
 
 const Index = () => {
+  const [showVideoLoading, setShowVideoLoading] = useState(true);
   const { ref: heroRef, isIntersecting: isHeroIntersecting } = useIntersectionObserver();
   const { ref: featuresRef, isIntersecting: isFeaturesIntersecting } = useIntersectionObserver();
   const { ref: coursesRef, isIntersecting: isCoursesIntersecting } = useIntersectionObserver();
   const { ref: whyChooseRef, isIntersecting: isWhyChooseIntersecting } = useIntersectionObserver();
   const { ref: ctaRef, isIntersecting: isCtaIntersecting } = useIntersectionObserver();
+
+  useEffect(() => {
+    // Hide the black screen after 3 seconds to allow video to load
+    const timer = setTimeout(() => {
+      setShowVideoLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <main>
@@ -51,6 +62,11 @@ const Index = () => {
           <div className="absolute inset-0 bg-black/50" />
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/30 via-transparent to-blue-900/30" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20" />
+          
+          {/* Black screen overlay to hide loading */}
+          {showVideoLoading && (
+            <div className="absolute inset-0 bg-black z-50 transition-opacity duration-1000 opacity-100" />
+          )}
         </div>
         
         {/* Animated Overlay Elements */}
