@@ -88,7 +88,14 @@ const Footer = () => {
               to: "/contact",
               label: "Contact"
               }].map(link => <li key={link.to}>
-                  <a href={link.to} className="text-muted-foreground hover:text-primary transition-colors duration-200 hover:underline">
+                  <a 
+                    href={link.to} 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.location.href = link.to;
+                    }}
+                    className="text-muted-foreground hover:text-primary transition-colors duration-200 hover:underline"
+                  >
                     {link.label}
                   </a>
                 </li>)}
