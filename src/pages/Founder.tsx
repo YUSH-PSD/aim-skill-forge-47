@@ -53,7 +53,7 @@ const Founder = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="relative bg-background/95 backdrop-blur-sm rounded-3xl p-1 shadow-2xl hover:shadow-glow transition-all duration-500">
                     <img 
-                      src="/lovable-uploads/ec860d83-8fbb-4508-81f6-eadc8474fed1.png" 
+                      src="/lovable-uploads/534985ac-d8eb-47f7-baee-9f58f7034177.png" 
                       alt="Anurodh Amatya - Founder and Managing Director of AIM Technical Institute"
                       className="w-96 h-auto rounded-2xl object-cover shadow-lg transform hover:scale-105 transition-transform duration-300"
                       loading="lazy"
