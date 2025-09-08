@@ -2,9 +2,6 @@ import { SEO } from "@/components/SEO";
 
 
 const images = [
-  { src: "/lovable-uploads/fd40b42b-097e-49c9-bed4-43f61736fa13.png", alt: "Welding training – close-up SMAW arc at AIM Kathmandu" },
-  { src: "/lovable-uploads/315257e2-cc1b-4db1-83da-70e6d697a0a6.png", alt: "Welding practice – creating a secure hitch joint" },
-  { src: "/lovable-uploads/ba6eb486-f3a8-4dd9-a660-bd1e04a05adc.png", alt: "Welding sparks during hands-on session" },
   { src: "/lovable-uploads/810a32d2-8167-4105-87c6-8e4d21dff4de.png", alt: "Professional welding demonstration with safety equipment" },
   { src: "/lovable-uploads/1744da34-fce7-42cc-b1ce-77ba5de2c6b2.png", alt: "Advanced welding technique in industrial setting" },
   { src: "/lovable-uploads/3cdaaecf-dd10-4335-997f-8193fbb0983d.png", alt: "Instructor and student welding team training session" }
@@ -31,16 +28,7 @@ const Gallery = () => {
           {images.map((img, idx) => (
             <figure 
               key={idx} 
-              className="group relative overflow-hidden transform hover:scale-105 transition-all duration-500 rounded-3xl"
-              style={{
-                clipPath: idx % 4 === 0 
-                  ? 'ellipse(80% 70% at 50% 50%)' 
-                  : idx % 4 === 1 
-                  ? 'polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%)'
-                  : idx % 4 === 2
-                  ? 'polygon(0% 25%, 100% 0%, 100% 75%, 0% 100%)'
-                  : 'polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%)'
-              }}
+              className="group relative overflow-hidden rounded-xl transform hover:scale-105 transition-all duration-500"
             >
               <div className="relative h-64 bg-gradient-to-br from-primary/20 to-secondary/20 p-1">
                 <div className="h-full w-full overflow-hidden bg-card">
