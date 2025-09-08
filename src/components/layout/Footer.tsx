@@ -88,16 +88,15 @@ const Footer = () => {
               to: "/contact",
               label: "Contact"
               }].map(link => <li key={link.to}>
-                  <a 
-                    href={link.to} 
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.location.href = link.to;
-                    }}
+                  <Link 
+                    to={link.to} 
                     className="text-muted-foreground hover:text-primary transition-colors duration-200 hover:underline"
+                    onClick={() => {
+                      setTimeout(() => window.location.reload(), 100);
+                    }}
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>)}
             </ul>
           </div>
