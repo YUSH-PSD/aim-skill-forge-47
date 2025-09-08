@@ -26,7 +26,7 @@ const courses = [
     title: "MIG Welding", 
     icon: Zap, 
     description: "Metal Inert Gas welding for precise fabrication and industrial applications.",
-    image: "/lovable-uploads/0d97587e-5da7-4342-b34b-53575dd7c043.png"
+    image: "/lovable-uploads/0ce453c9-ce19-4515-ae12-e7648ae478e9.png"
   },
   { 
     title: "Lathe Machine", 
