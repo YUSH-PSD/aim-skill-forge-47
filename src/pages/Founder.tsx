@@ -45,7 +45,7 @@ const Founder = () => {
               {/* Founder Image */}
               <div 
                 ref={imageRef}
-                className={`flex justify-center lg:justify-end order-2 lg:order-1 transition-all duration-1000 ${
+                className={`flex justify-center lg:justify-end order-1 lg:order-1 transition-all duration-1000 ${
                   imageAnimate ? 'animate-slide-in-left' : 'opacity-0 translate-x-8'
                 }`}
               >
@@ -67,7 +67,7 @@ const Founder = () => {
               </div>
 
               {/* Quote Content */}
-              <div className="space-y-8 order-1 lg:order-2">
+              <div className="space-y-8 order-2 lg:order-2">
                 <div 
                   ref={quoteRef}
                   className={`relative transition-all duration-1000 ${
