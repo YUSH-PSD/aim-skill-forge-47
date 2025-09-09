@@ -88,7 +88,11 @@ const Footer = () => {
               to: "/contact",
               label: "Contact"
               }].map(link => <li key={link.to}>
-                  <Link to={link.to} className="text-muted-foreground hover:text-primary transition-colors duration-200 hover:underline">
+                  <Link 
+                    to={link.to} 
+                    className="text-muted-foreground hover:text-primary transition-colors duration-200 hover:underline"
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  >
                     {link.label}
                   </Link>
                 </li>)}
