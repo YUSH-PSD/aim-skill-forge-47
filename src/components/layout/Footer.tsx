@@ -88,9 +88,9 @@ const Footer = () => {
               to: "/contact",
               label: "Contact"
               }].map(link => <li key={link.to}>
-                  <a href={link.to} className="text-muted-foreground hover:text-primary transition-colors duration-200 hover:underline">
+                  <Link to={link.to} className="text-muted-foreground hover:text-primary transition-colors duration-200 hover:underline">
                     {link.label}
-                  </a>
+                  </Link>
                 </li>)}
             </ul>
           </div>
